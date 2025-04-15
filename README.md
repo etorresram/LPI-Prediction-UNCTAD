@@ -1,29 +1,30 @@
-# Predicting the LPI with UNCTAD Data and ML Methods
+# Predicting the Logistics Performance Index (LPI) with Tree-Based Machine Learning Methods
 #### Author: Eric Torres
 
-This repository presents a machine learning-based framework to approximate the **Logistics Performance Index (LPI)** published by the World Bank. The official 2023 LPI relies on Big Data, such as postal and container-level event records from systems like TradeLens, UPU, and Cargo iQ. As most of these data are not publicly available, this project leverages **open-access macroeconomic and trade datasets**, particularly from **UNCTAD**, to estimate the LPI using statistical and machine learning methods.
+This repository presents a machine learning-based framework to predict the **Logistics Performance Index (LPI)** published by the World Bank. The official 2023 LPI relies on Big Data, such as postal and container-level event records from systems like TradeLens, UPU, and Cargo iQ. As most of these data are not publicly available, this project leverages **open-access macroeconomic and trade datasets**, particularly from **UNCTAD**, to estimate the LPI using statistical and machine learning methods.
 
 ---
 
 ## 🎯 Project Objectives
 
-1. Reproduce the World Bank’s LPI index using only open-access macro-level datasets.
+1. Predict the World Bank’s LPI index using only open-access macro-level datasets.
 2. Create a structured and interpretable ML pipeline for LPI approximation.
-3. Offer a transparent tool for researchers and policymakers without access to proprietary logistics datasets.
-4. Assess model performance and interpretability across countries and income groups.
+3. Assess model performance and interpretability across countries and income groups.
+4. Predict the scores for more countries
 
 ---
 
 ## 🧪 Main Notebook
 
-> **Notebook**: `lpi_lite.ipynb`
+> **Notebook**: `LPI_Prediction_MLModels.ipynb`
 
 This notebook implements the complete modeling pipeline:
 - Data ingestion and merging
 - Feature engineering and exploratory analysis
 - Model training and tuning
 - LPI prediction and error diagnostics
-- Exporting of country-level predicted scores
+- Feature importance
+- Predict the index for 13 new countries
 
 ---
 
@@ -47,6 +48,7 @@ This notebook implements the complete modeling pipeline:
 | Filename | Source | Contents |
 |----------|--------|----------|
 | `LPI_INDEX.csv` | World Bank | Official World Bank's LPI scores from the 2023 Big Data–based index |
+| `IncomeREgions.csv` | World Bank | Export and import volume indices referenced to the base year 2015. These indices measure the physical volume of trade, excluding price effects. |
 | `US_ConcentDiversIndices.csv` | UNCTADstat | Trade concentration and diversification: Measures how focused or diversified a country’s trade is across products, and how it differs from the global pattern. |
 | `US_ContPortThroughput.csv` | UNCTADstat | Estimated number of containers handled per country, measured in 20-foot equivalent units. A 40-foot container equals two TEUs. |
 | `US_FdiFlowsStock.csv` | UNCTADstat | Foreign direct investment (FDI) inward and outward flows and stocks, expressed in millions of US dollars. |
@@ -58,16 +60,18 @@ This notebook implements the complete modeling pipeline:
 | `US_TermsOfTrade.csv` | UNCTADstat | Export and import volume indices referenced to the base year 2015. These indices measure the physical volume of trade, excluding price effects. |
 
 
+
 📝 All data is aggregated to the country level for the year 2023 (or closest available year aligned with LPI 2023).
 
 ---
 
 ## 📊 Model Output
 
-- The best-performing models yield **R² ≈ 0.91** and **RMSE ≈ 0.211**
+- The best-performing models yield **R² ≈ 0.89** and **RMSE ≈ 0.195**
 - Scatter plots show strong linearity between predicted and true LPI scores
 - Residual analysis highlights over-/under-performing countries
 - Model interpretation via feature importance and SHAP values
+- Tables with predicted values
 
 ---
 
@@ -75,11 +79,12 @@ This notebook implements the complete modeling pipeline:
 
 Figures generated include:
 - Missings by variable
-- Feature importance (tree-based models)
-- True vs. predicted LPI scores
+- Correlation matrix
 - Residuals by income group and region
+- Feature importance (tree-based models)
 
-📁 All plots are saved in the `/figures` directory.
+
+📁 All plots are saved in the `/Figures` directory.
 
 ---
 
