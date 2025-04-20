@@ -84,7 +84,7 @@ Figures generated include:
 - Feature importance (tree-based models)
 
 
-📁 All plots are saved in the `/Figures` directory.
+📁 All plots are saved in the `figures` directory.
 
 ---
 
