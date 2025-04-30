@@ -1,7 +1,7 @@
 # Predicting the Logistics Performance Index (LPI) with Tree-Based Machine Learning Methods
 #### Author: Eric Torres
 
-This repository presents a machine learning-based framework to predict the World Bans's  **Logistics Performance Index (LPI)**. The official 2023 LPI relies on Big Data, such as postal and container-level event records from systems like TradeLens, UPU, and Cargo iQ. As most of these data are not publicly available, this project leverages **open-access macroeconomic and trade datasets**, particularly from **UNCTAD**, to estimate the LPI using statistical and machine learning methods.
+This repository presents a machine learning-based framework to predict the World Bank's  **Logistics Performance Index (LPI)**. The official 2023 LPI relies on Big Data, such as postal and container-level event records from systems like TradeLens, UPU, and Cargo iQ. As most of these data are not publicly available, this project leverages **open-access macroeconomic and trade datasets**, particularly from **UNCTAD**, to estimate the LPI using statistical and machine learning methods.
 
 ---
 
